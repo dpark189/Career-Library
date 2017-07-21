@@ -19,3 +19,8 @@ Potential places to start for a side project:
 No idea is too small, weird or insignificant to get started with. If you're interested
 in the project, you'll keep working on it and learn a lot about coding. Download the
 boilerplate, make those first commits and enjoy!
+
+
+![Build Status](https://codeship.com/projects/72cf0be0-4fd9-0135-7faf-6279c3a80d3c/status?branch=master)
+![Code Climate](https://codeclimate.com/github/dpark189/breakable-toys-project.png)
+![Coverage Status](https://coveralls.io/repos/dpark189/breakable-toys-project/badge.png)
