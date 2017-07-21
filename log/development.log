@@ -1,0 +1,7 @@
+Started GET "/" for ::1 at 2017-07-20 20:17:17 -0400
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 371ms (Views: 369.2ms | ActiveRecord: 0.0ms)
+
+
