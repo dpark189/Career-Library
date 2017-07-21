@@ -5,7 +5,7 @@ including testing. To get started, just clone the repository down and get starte
 React on Rails like you normally would.
 
 ## Areas in the boilerplate to Update
-Be sure to search `boilerplate` within your project and update any references to
+Be sure to search `professia` within your project and update any references to
 boilerplate with the name of your application. If you do not follow this step, your
 application may not behave the way that you expect it to.
 
