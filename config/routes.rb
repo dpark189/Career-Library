@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   root 'static_pages#index'
-  resources :videos, only: [:index, :show]
+  resources :videos
+  resources :careers
 end
