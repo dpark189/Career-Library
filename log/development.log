@@ -632,3 +632,21 @@ WHERE c.contype = 'f'
 ORDER BY c.conname
 [0m
   [1m[36mCareer Load (0.7ms)[0m  [1m[34mSELECT  "careers".* FROM "careers" ORDER BY "careers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mVideo Load (0.6ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" ORDER BY "videos"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCareer Load (0.7ms)[0m  [1m[34mSELECT  "careers".* FROM "careers" ORDER BY "careers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2017-07-29 15:51:08 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (25.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 846ms (Views: 844.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/videos" for ::1 at 2017-07-29 15:51:30 -0400
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (25.7ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  Rendered videos/index.html.erb within layouts/application (52.4ms)
+Completed 200 OK in 77ms (Views: 24.2ms | ActiveRecord: 44.5ms)
+
+
