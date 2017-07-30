@@ -1,0 +1,11 @@
+<h1>
+  <%= @career.name %>
+</h1>
+
+<% @videos.each do |video| %>
+<div class="career-video">
+  <%= video.name %><br>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/#{video.url}" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<% end %>
