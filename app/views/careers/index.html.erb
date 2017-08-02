@@ -1,7 +1,38 @@
 <h1>Careers</h1>
 
-<% @careers.each do |career| %>
-<div class="career_names">
-<%= link_to career.name, career_path(career) %>
+<style>
+.career-thumbnail {
+  width: 150px;
+   height: 125px;
+   background-color: rgba(200, 200, 200, 0.5);
+   color: black;
+   vertical-align: top;
+   display: inline-block;
+   margin:10px;
+   zoom: 1
+}
+
+
+.career-names {
+  overflow: auto;
+  display: block;
+}
+.thumbnail {
+  color: black;
+}
+.career-names > div {
+  margin: 20px;
+  width: 150px;
+  height: 100px;
+  float: left;
+  text-align: center;
+}
+</style>
+
+<div class="career-names">
+    <% @careers.each do |career| %>
+    <li class="career-thumbnail">
+    <%= link_to career.name, career_path(career), :class=> "thumbnail"%>
+    </li>
+    <% end %>
 </div>
-<% end %>
