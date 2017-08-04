@@ -23,7 +23,9 @@
 
   <body>
   <style>
-  ul {
+  .top-bar {
+      position: sticky;
+      top: 0;
       list-style-type: none;
       margin: 0;
       padding: 0;
@@ -94,13 +96,12 @@
   }
 
   </style>
-    <ul>
+    <ul class="top-bar">
       <li><a href="/">Home</a></li>
-      <li><a href="#news">News</a></li>
       <li class="dropdown">
-        <a href="javascript:void(0)" style="background-color: green;" class="dropbtn">Dropdown</a>
+        <a href="javascript:void(0)" style="background-color: green;" class="dropbtn">Menu</a>
         <div class="dropdown-content">
-          <a href="#">Link 1</a>
+          <a href="/videos">videos</a>
           <a href="#">Link 2</a>
           <a href="#">Link 3</a>
         </div>
