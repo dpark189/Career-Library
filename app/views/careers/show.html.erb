@@ -2,6 +2,10 @@
   <%= @career.name %>
 </h1>
 
+<div>
+<%= link_to "Add Video",  new_career_video_path(params[:id]) %>
+</div>
+
 <% @videos.each do |video| %>
 <div class="career-video">
   <%= video.name %><br>

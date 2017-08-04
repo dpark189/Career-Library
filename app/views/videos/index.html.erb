@@ -1,5 +1,9 @@
 <h1>test video embed</h1>
 
+<div>
+<%= link_to "Add Video",  new_career_video_path %>
+</div>
+
 <% @videos.each do |video| %>
   <%= video.name %>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/#{video.url}" frameborder="0" allowfullscreen></iframe>
