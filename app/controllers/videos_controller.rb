@@ -6,11 +6,11 @@ class VideosController < ApplicationController
   def new
     @id = params[:career_id]
     @video = Video.new
-    binding.pry
+
   end
 
   def create
-    binding.pry
+
     @video = Video.new(video_params)
     if @video.save
       flash[:notice] = 'Video saved'

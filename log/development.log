@@ -4709,3 +4709,12 @@ Processing by CareersController#show as HTML
 Completed 200 OK in 20ms (Views: 16.3ms | ActiveRecord: 1.5ms)
 
 
+Started GET "/careers/2/videos/new" for ::1 at 2017-08-04 17:34:11 -0400
+Processing by VideosController#new as HTML
+  Parameters: {"career_id"=>"2"}
+  Rendering videos/new.html.erb within layouts/application
+  Rendered videos/_form.html.erb (3.0ms)
+  Rendered videos/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 6399ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
