@@ -5,11 +5,31 @@
 <div>
 <%= link_to "Add Video",  new_career_video_path(params[:id]) %>
 </div>
+<% if @videos.length != 0  %>
+<div class="vid-container">
+  <% first_video="youtu.be/#{@videos.first.embbed_code}"%>
+	<%= raw(youtube_embed("#{first_video}")) %>
+</div>
+<% else %>
+<%= "No Videos Available At This Time" %>
+<% end %>
+
+
 
 <% @videos.each do |video| %>
-<div class="career-video">
-  <%= video.name %><br>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/#{video.url}" frameborder="0" allowfullscreen></iframe>
+<div>
+
+  <% video_src="http://youtube.com/embed/#{video.embbed_code}?autoplay=1&rel=0&showinfo=0&autohide=1" %>
+  <% image_var="http://img.youtube.com/vi/#{video.embbed_code}/0.jpg" %>
+
+  <div class="vid-item" onClick="document.getElementById('vid_frame').src=""">
+    <div class="thumb">
+    	<%= image_tag "#{image_var}" %>
+    </div>
+  </div>
+
+</div>
+
 </div>
 
 <% end %>
