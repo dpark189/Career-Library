@@ -18,9 +18,7 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
-  <div>
-    <%= f.input :profile_photo, type: :file%>
-  </div>
+
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

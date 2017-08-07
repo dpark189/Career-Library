@@ -1,6 +1,14 @@
 <h1>test video embed</h1>
 
+<div class="vid-container">
+	<iframe id="vid_frame" src="http://www.youtube.com/embed/eg6kNoJmzkY?rel=0&showinfo=0&autohide=1" width="560" height="315" frameborder="0"></iframe>
+</div>
+
 <% @videos.each do |video| %>
-  <%= video.name %>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/#{video.url}" frameborder="0" allowfullscreen></iframe>
+<div class="vid-item" onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/eg6kNoJmzkY?autoplay=1&rel=0&showinfo=0&autohide=1'">
+  <div class="thumb">
+    <%= video.name %>
+    <img src="https://www.youtube.com/embed/#{video.url}/0.jpg" alt="" />
+  </div>
+</div>
 <% end %>
