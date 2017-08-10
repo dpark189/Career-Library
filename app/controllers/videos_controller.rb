@@ -6,18 +6,18 @@ class VideosController < ApplicationController
   def new
     @id = params[:career_id]
     @video = Video.new
-
+    @career = Career.find(params[:career_id])
   end
 
   def create
 
     @video = Video.new(video_params)
     if @video.save
-      flash[:notice] = 'Video saved'
+      flash[:notice] = 'Video was successfully added.'
       @career = Career.find(params[:video][:career_id])
       redirect_to @career
     else
-      redirect_to new_career_video_path(params[:video][:career_id])
+      render "new"
     end
   end
 

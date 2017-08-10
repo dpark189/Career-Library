@@ -10,19 +10,17 @@ class CareersController < ApplicationController
 
   def new
     @id = params[:career_id]
-    @career = Video.new
-
+    @career = Career.new
+    @video = Video.new
   end
 
   def create
-
     @career = Career.new(video_params)
     if @career.save
       flash[:notice] = 'Video saved'
-      @career = Career.find(params[:career][:career_id])
       redirect_to @career
     else
-      redirect_to new_career_video_path(params[:career][:career_id])
+      render "new"
     end
   end
 

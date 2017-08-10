@@ -2,25 +2,25 @@
 <html class="no-js" lang="en">
 
   <meta name="viewport" content="width=470, maximum-scale=1, user-scalable=no, target-densitydpi=device-dpi">
-<header>
+<header style="text-align: center;">
 <h1>
   <%= @career.name %>
 </h1>
+<div>
+<%= link_to "Add Video",  new_career_video_path(params[:id]) %>
+</div>
 <style media="screen">
 
 .vid-container {
-  position: relative;
-  left: 25%;
-  padding-bottom: 30%;
+  top: 50%;
+  padding-left: 26%;
   padding-top: 30px;
   height: 60%;
-
 }
 
 .vid-container iframe,
 .vid-container object,
 .vid-container embed {
-  position: absolute;
   top: 0;
   left: 0;
   width: 640px;
@@ -52,7 +52,7 @@ width: 100%;
 height: 190px;
 display: inline-block;
 overflow-x: scroll;
-position: relative;
+
 top:0;
 left: 0;
 }
@@ -74,7 +74,7 @@ height: 84px;
 
 .thumb img {
 width: 100%;
-position: relative;
+
 top: -13px;
 }
 
@@ -111,9 +111,7 @@ body[class="career-videos"] {
 </header>
 
 <body class="carrer-videos">
-<div>
-<%= link_to "Add Video",  new_career_video_path(params[:id]) %>
-</div>
+
 <% if @videos.length != 0  %>
 <div class="vid-container">
   <% first_video="youtu.be/#{@videos.first.embbed_code}"%>

@@ -1,0 +1,41 @@
+<%= simple_form_for [@career] do |f| %>
+
+<div class='column column-block'>
+  <% if @career.errors.any? %>
+    <div id="error_explanation-careers">
+      <h2><%= pluralize(@career.errors.count, "error") %> prohibited this career from being saved:</h2>
+      <ul>
+      <% @career.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li><br>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
+  <div class="add-form-inputs">
+
+    <div class="career-title">
+      <%= f.label :name, 'Title' %>
+      <div class="career-title input">
+        <%= f.text_field :name %>
+      </div>
+    </div>
+
+    <div class="career-description">
+      <%= f.label :description, 'Description' %>
+      <div class="career-description input">
+        <%= f.text_field :description %>
+      </div>
+    </div>
+
+    <div class="career-education">
+      <%= f.label :education_req, "Average Education Level for Entry"%>
+      <div class="career-education input">
+        <%= f.input :education_req, collection: ["No Requirement", "High School Diploma", "Associates Degree", "Bachelors Degree", "Master's Degree", "PhD", "Other"], label: false, :id => "education-select" %>
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= f.submit 'Submit', class: 'button' %>
+    </div>
+<% end %>
+  </div>
