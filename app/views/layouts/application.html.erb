@@ -72,12 +72,21 @@
 
     /* When the input field gets focus, change its width to 100% */
     input[type=text]:focus {
-        width: 50%;
+        width: 100%;
+    }
+
+    .career-index-thumbnail {
+      width: 100px;
+      height: 100px;
+    }
+    .career-show-image {
+      width: 225px;
+      height: 200px;
     }
 
     input[class="password required"] {
-      margin-left: 10px;
-      width: 130px;
+        margin-left: 10px;
+        width: 130px;
           box-sizing: border-box;
           border: 2px solid #ccc;
           border-radius: 3px;
@@ -90,8 +99,8 @@
     }
 
     input[class="string email required"] {
-      margin-left: 10px;
-      width: 130px;
+        margin-left: 10px;
+        width: 130px;
         box-sizing: border-box;
         border: 2px solid #ccc;
         border-radius: 3px;
@@ -119,7 +128,7 @@
   }
 
     body {
-    background-image: url("http://68.media.tumblr.com/538291ef0e7b0a69c0c141cf21ddc771/tumblr_o8fbvjhVnc1rmbi9co1_1280.jpg");
+
     background-repeat: no-repeat;
     background-position: center center;
     -moz-background-size: cover;
@@ -144,7 +153,12 @@
           <a href="#">Link 3</a>
         </div>
       </li>
-          <%= text_field_tag :search, params[:search], :placeholder => "Search...", :class => "input-form" %>
+      <li>
+      <%= form_tag(careers_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Careers" %>
+        <%= submit_tag "Search", :name => nil %>
+      <% end %>
+      </li>
           <li style="float:right">
             <div style="float:right">
               <% if user_signed_in? %>

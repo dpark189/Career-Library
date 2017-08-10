@@ -2,6 +2,11 @@ class CareersController < ApplicationController
   before_action :authenticate_user, only: [:new, :create]
   def index
     @careers = Career.all
+    if params[:search]
+      @careers = Career.search(params[:search]).order("created_at DESC")
+    else
+      @careers = Career.all.order("created_at DESC")
+    end
   end
 
   def show
@@ -12,13 +17,13 @@ class CareersController < ApplicationController
   def new
     @id = params[:career_id]
     @career = Career.new
-    @video = Video.new
   end
 
   def create
-    @career = Career.new(video_params)
+      @career = Career.new(career_params)
+
     if @career.save
-      flash[:notice] = 'Video saved'
+      flash[:notice] = 'career saved'
       redirect_to @career
     else
       render "new"
@@ -26,8 +31,10 @@ class CareersController < ApplicationController
   end
 
   private
-  def video_params
-    params.require(:career).permit(:name, :url, :career_id)
+
+
+  def career_params
+    params.require(:career).permit(:name, :description, :education_req, :career_image)
   end
 
   def authenticate_user
