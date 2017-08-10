@@ -1,9 +1,12 @@
-<h1>Careers</h1>
+<h1 style="text-align: center;">Careers</h1>
+<div style="text-align: center;">
 <%= link_to "Add Career", new_career_path %>
+</div><br>
 <style>
 .career-thumbnail {
   width: 150px;
-   height: 125px;
+   height: 175px;
+   text-align: center;
    background-color: rgba(200, 200, 200, 0.5);
    color: black;
    vertical-align: top;
@@ -32,7 +35,8 @@
 <div class="career-names">
     <% @careers.each do |career| %>
     <li class="career-thumbnail">
-    <%= link_to career.name, career_path(career), :class=> "thumbnail"%>
+    <%= link_to career.name, career_path(career), :class => "thumbnail" %> <br>
+    <%= image_tag career.career_image, :class => "career-index-thumbnail" %>
     </li>
     <% end %>
 </div>

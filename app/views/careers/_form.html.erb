@@ -34,6 +34,9 @@
         <%= f.input :education_req, collection: ["No Requirement", "High School Diploma", "Associates Degree", "Bachelors Degree", "Master's Degree", "PhD", "Other"], label: false, :id => "education-select" %>
       </div>
     </div>
+    <div class="career-image">
+      <%= f.file_field :career_image %>
+    </div>
     <div class="form-actions">
       <%= f.submit 'Submit', class: 'button' %>
     </div>
