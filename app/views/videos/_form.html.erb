@@ -1,18 +1,19 @@
-<%= form_for [@video] do |f| %>
+<%= simple_form_for [@career, @video] do |f| %>
+
+
 <div class='column column-block'>
   <% if @video.errors.any? %>
     <div id="error_explanation-videos">
       <h2><%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h2>
-
       <ul>
       <% @video.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li><%= msg %></li><br>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="form-inputs">
+<div class="add-form-inputs">
   <div class="video-title">
     <%= f.label :name, 'Title' %>
     <div class="video-title input">
@@ -21,7 +22,7 @@
   </div>
 
   <div class="video-embbed_code">
-    <%= f.label :embbed_code, "Youtube video id 'youtu.be/****' " %>
+    <%= f.label :embbed_code, "Youtube video id 'youtu.be/****'" %>
     <div class="video-embbed_code input">
       <%= f.text_field :embbed_code %>
     </div>
