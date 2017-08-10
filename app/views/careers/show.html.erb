@@ -4,7 +4,8 @@
   <meta name="viewport" content="width=470, maximum-scale=1, user-scalable=no, target-densitydpi=device-dpi">
 <header style="text-align: center;">
 <h1>
-  <%= @career.name %>
+  <%= @career.name %> <br>
+  <%= image_tag @career.career_image, :class => "career-show-image"%>
 </h1>
 <div>
 <%= link_to "Add Video",  new_career_video_path(params[:id]) %>
