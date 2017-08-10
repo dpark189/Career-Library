@@ -1,4 +1,6 @@
 class VideosController < ApplicationController
+  before_action :authenticate_user, only: [:new, :create]
+
   def index
     @videos = Video.where(career_id: params[:id])
   end
@@ -26,4 +28,10 @@ class VideosController < ApplicationController
     params.require(:video).permit(:name, :embbed_code, :career_id)
   end
 
+  def authenticate_user
+    if !user_signed_in?
+      flash[:notice] = 'You must sign in or sign up.'
+      redirect_to new_user_session_path
+    end
+  end
 end
