@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <head style="position: fixed; z-index: 1;">
     <style>
     .top-bar {
         position: sticky;
@@ -143,34 +144,31 @@
   font-size: 13px
 }
     </style>
-    <ul class="top-bar">
+    <ul class="top-bar" stle="position: fixed;">
       <li><a href="/" style="font-size: 30px; padding-top: 10px; padding-bottom: 0px;">Career Library</a></li>
       <li class="dropdown">
         <a href="javascript:void(0)" style="background-color: green;" class="dropbtn">Menu</a>
         <div class="dropdown-content">
           <a href="/videos">All Videos</a>
+          <% if user_signed_in? %>
+
+              <%= link_to "Edit Account", edit_user_registration_path %>
+
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+            <% else %>
+              <%= link_to 'Sign In', new_user_session_path %>
+              <%= link_to 'Sign Up', new_user_registration_path %>
+          <% end %>
         </div>
       </li>
       <li>
       <%= form_tag(careers_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Careers" %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Careers", :class => "search-bar" %>
         <%= submit_tag "Search", :name => nil %>
       <% end %>
       </li>
-          <li style="float:right">
-            <div style="float:right">
-              <% if user_signed_in? %>
 
-                  <%= link_to "Edit Account", edit_user_registration_path %>
-
-                  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-                <% else %>
-                  <%= link_to 'Sign In', new_user_session_path %>
-                  <%= link_to 'Sign Up', new_user_registration_path %>
-              <% end %>
-            </div>
-          </li>
-      </ul>
+    </ul>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= csrf_meta_tags %>
 
