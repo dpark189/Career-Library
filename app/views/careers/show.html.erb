@@ -14,6 +14,7 @@
 .vid-container {
   padding-left: 0%;
   overflow: hidden;
+  z-index: 1;
 }
 
 .vid-container iframe,
@@ -28,8 +29,8 @@
     position: relative;
     width: 100%;
     height: 0;
+    z-index: 1;
     padding-bottom: 51%;
-    z-index: -1;
   }
 
   .aspect-ratio iframe {
@@ -38,6 +39,7 @@
     width: 80%;
     height: 100%;
     left: 0; top: 0;
+    z-index: 1;
   }
 
 
@@ -77,7 +79,8 @@ width: 120px;
 height: 148px;
 float: left;
 margin: 0;
-padding: 10px;
+
+text-align: center;
 }
 
 .thumb {
@@ -141,15 +144,18 @@ cursor: pointer;
           <div class="thumb">
           	<%= image_tag "#{image_var}", onClick:"document.getElementById('vid_frame').src=`#{video_src}`", :class => "vid_thumb", :style => "cursor: pointer; padding-top: 5px;"%>
           </div>
+            <%= video.name %>
         </div>
       </div>
     <% end %>
-
   </div>
-
+</div>
+<br>
+<div class="add-form-inputs"  style="margin-left: 20%;">
+  <%= @career.description %> <br>
+  <%= @career.education_req %><br>
 </div>
 
-</div>
 </body>
 
 </html>
