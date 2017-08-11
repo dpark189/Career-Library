@@ -58,12 +58,12 @@
 
     input[type=text] {
       margin-left: 10px;
-      width: 130px;
+      width: 100px;
       height: 46px;
           box-sizing: border-box;
           border: 2px solid #ccc;
           border-radius: 3px;
-          font-size: 16px;
+          font-size: 12px;
           background-color: white;
           background-position: 10px 10px;
           background-repeat: no-repeat;
@@ -197,9 +197,9 @@
 }
     </style>
     <ul class="top-bar" stle="position: fixed;">
-      <li><a href="/" style="font-size: 30px; padding-top: 10px; padding-bottom: 0px;">Career Library</a></li>
+      <li><a href="/" style="font-size: 25px; padding-top: 10px; padding-bottom: 0px;">CareerLibrary</a></li>
       <li class="dropdown">
-        <a href="javascript:void(0)" style="background-color: green;" class="dropbtn">Menu</a>
+        <a href="javascript:void(0)" style="background-color: green; font-size: 16px;" class="dropbtn">Menu</a>
         <div class="dropdown-content">
           <a href="/videos">All Videos</a>
           <% if user_signed_in? %>
@@ -216,7 +216,7 @@
       <li>
       <%= form_tag(careers_path, :method => "get", id: "search-form") do %>
         <%= text_field_tag :search, params[:search], placeholder: "Search Careers", :class => "search-bar" %>
-        <%= submit_tag "Search", :name => nil %>
+        <%= submit_tag "Search", :name => nil, :style => "width: 50px;" %>
       <% end %>
       </li>
 
