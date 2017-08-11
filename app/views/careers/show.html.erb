@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
-  <meta name="viewport" content="width=470, maximum-scale=1, user-scalable=no, target-densitydpi=device-dpi">
 <header style="text-align: center;">
 <h1>
   <%= @career.name %> <br>
@@ -13,20 +12,33 @@
 <style media="screen">
 
 .vid-container {
-  top: 50%;
-  padding-left: 26%;
-  padding-top: 30px;
-  height: 360px;
+  padding-left: 0%;
+  overflow: hidden;
 }
 
 .vid-container iframe,
 .vid-container object,
 .vid-container embed {
   top: 0;
-  left: -5%;
-  width: 60%;
-  height: 100%;
+  width: 100%;
 }
+
+  .aspect-ratio {
+    align-content: center;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 51%;
+    z-index: -1;
+  }
+
+  .aspect-ratio iframe {
+    padding-left: 10%;
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    left: 0; top: 0;
+  }
 
 
 /*  VIDEOS PLAYLIST
@@ -91,11 +103,6 @@ background: #eee;
 cursor: pointer;
 }
 
-@media (max-width: 624px) {
-body {
-  margin: 15px;
-}
-
 .caption {
   margin-top: 40px;
 }
@@ -111,7 +118,7 @@ body {
 </header>
 
 <body class="career-videos">
-
+<div class="aspect-ratio">
 <% if @videos.length != 0  %>
 <div class="vid-container">
   <% first_video="youtu.be/#{@videos.first.embbed_code}"%>
@@ -120,7 +127,7 @@ body {
 <% else %>
 <%= "No Videos Available At This Time" %>
 <% end %>
-
+</div>
 
 <div class="vid-list-container">
 
