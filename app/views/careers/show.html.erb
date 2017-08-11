@@ -5,7 +5,7 @@
 <header style="text-align: center;">
 <h1>
   <%= @career.name %> <br>
-  <%= image_tag @career.career_image, :class => "career-show-image"%>
+  <%= image_tag @career.career_image, :class => "career-show-"%>
 </h1>
 <div>
 <%= link_to "Add Video",  new_career_video_path(params[:id]) %>
@@ -144,20 +144,5 @@ body {
 
 </div>
 </body>
-<script type="text/javascript">
-$(document).ready(function () {
-  $(".arrow-right").bind("click", function (event) {
-      event.preventDefault();
-      $(".vid-list-container").stop().animate({
-          scrollLeft: "+=336"
-      }, 750);
-  });
-  $(".arrow-left").bind("click", function (event) {
-      event.preventDefault();
-      $(".vid-list-container").stop().animate({
-          scrollLeft: "-=336"
-      }, 750);
-  });
-});
-</script>
+
 </html>
