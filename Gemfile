@@ -10,12 +10,16 @@ gem 'devise'
 gem 'simple_form'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
+gem 'carrierwave-aws'
+
+
 group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0'
   gem 'shoulda'
+  gem 'dotenv-rails'
   gem 'valid_attribute'
   gem 'faker', github: 'stympy/faker'
 end
