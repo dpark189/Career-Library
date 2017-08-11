@@ -2,7 +2,7 @@ class VideosController < ApplicationController
   before_action :authenticate_user, only: [:new, :create]
 
   def index
-    @videos = Video.where(career_id: params[:id])
+    @videos = Video.all
   end
 
   def new

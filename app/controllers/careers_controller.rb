@@ -2,6 +2,11 @@ class CareersController < ApplicationController
   before_action :authenticate_user, only: [:new, :create]
   def index
     @careers = Career.all
+    if params[:search]
+      @careers = Career.search(params[:search]).order("created_at DESC")
+    else
+      @careers = Career.all.order("created_at DESC")
+    end
   end
 
   def show
