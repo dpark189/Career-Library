@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-  <head style="position: fixed; z-index: 1;">
+  <head style="position: relative;">
     <style>
+
+
     .top-bar {
         position: sticky;
         top: 0;
-        height: 46px;
+        height: 48px;
         list-style-type: none;
         margin: 0;
         padding: 0;
         background-color: #333;
+        z-index: 1000000;
     }
 
     li {
@@ -133,8 +136,8 @@
       height: 100px;
     }
     .career-show-image {
-      width: 225px;
-      height: 200px;
+      width: 125px;
+      height: 100px;
     }
 
     input[class="password required"] {
@@ -193,19 +196,18 @@
 .search-bar {
   padding-bottom: 13px;
   padding-top: 13px;
-  font-size: 13px
+  font-size: 13px;
+  display: inline-block;
 }
     </style>
     <ul class="top-bar" stle="position: fixed;">
-      <li><a href="/" style="font-size: 25px; padding-top: 10px; padding-bottom: 0px;">CareerLibrary</a></li>
+      <li><a href="/" style="font-size: 25px; padding-top: 10px; padding-bottom: 9px; padding-left: 10px; padding-right: 10px;">CareerLibrary</a></li>
       <li class="dropdown">
-        <a href="javascript:void(0)" style="background-color: green; font-size: 16px;" class="dropbtn">Menu</a>
+        <a href="javascript:void(0)" style="background-color: green; font-size: 16px; padding-bottom: 16px;" class="dropbtn">Menu</a>
         <div class="dropdown-content">
           <a href="/videos">All Videos</a>
           <% if user_signed_in? %>
-
               <%= link_to "Edit Account", edit_user_registration_path %>
-
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
             <% else %>
               <%= link_to 'Sign In', new_user_session_path %>
@@ -213,12 +215,12 @@
           <% end %>
         </div>
       </li>
-      <li>
+
       <%= form_tag(careers_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Careers", :class => "search-bar" %>
-        <%= submit_tag "Search", :name => nil, :style => "width: 50px;" %>
+        <%= text_field_tag :search, params[:search], placeholder: "Career", :class => "search-bar" %>
+        <%= submit_tag "Search", :name => nil, :style => "margin-left: -59px; background-color: grey;" %>
       <% end %>
-      </li>
+
 
     </ul>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
