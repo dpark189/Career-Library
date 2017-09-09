@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :video do
     sequence(:name) { |n| "sample video #{n}"}
-    url 'pVsGODYj7HI'
-    sequence(:career_id) { |n| "#{n}"}
+    embbed_code 'pVsGODYj7HI'
+    sequence(:career_id) { "1"}
   end
 end
