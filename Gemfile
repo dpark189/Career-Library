@@ -6,18 +6,20 @@ gem 'pg', '~> 0.15'
 gem 'rails', '5.0.0.1'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
+gem 'jquery-rails'
+gem 'webpacker', '~> 2.0'
 gem 'devise'
 gem 'simple_form'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'carrierwave-aws'
-
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails', '~> 3.5'
   gem 'shoulda'
   gem 'dotenv-rails'
   gem 'valid_attribute'
@@ -26,6 +28,7 @@ end
 
 group :test do
   gem 'launchy', require: false
+  gem 'coveralls', require: false
 end
 
 group :production do
