@@ -1,12 +1,11 @@
 # breakable-toys-project
 ![Build Status](https://app.codeship.com/projects/72cf0be0-4fd9-0135-7faf-6279c3a80d3c/status?branch=master)
-Launch Academy Individual Project
+
 heroku app
 
-CareerLibrary is an mobile friendly application that compiles a list of different careers and informative videos regarding what professionals in the specified careers do. It is meant to be used to inform students and other individuals looking for a change in profession so that they can make and informed decision and plan accordingly.
-It was created to demonstrate my ability to create a MVP and I have since been using it to practice and improve my skills as a web developer.
+### This project was created as a practice project
 
-TECHNOLOGIES: Currently, CareerLibrary is using Javascript, and CSS for it's front end, and uses the Devise gem to allow users to sign up and sign in.
+TECHNOLOGIES: Currently, CareerLibrary is using Ruby on Rails, Javascript, and CSS for it's front end, and uses the Devise gem to allow users to sign up and sign in.
 
 Rails was used for the back-end with PostGreSQL as the database. Rails is a convention-over-configuration framework that allowed us to get the application up and running without too much time spent on configuration decisions. PostGreSQL is a Heroku-supported database that makes deployment easier.
 
