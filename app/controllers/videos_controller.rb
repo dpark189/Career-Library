@@ -2,7 +2,7 @@ class VideosController < ApplicationController
   before_action :authenticate_user, only: [:new, :create]
 
   def index
-    @videos = Video.all
+    @videos = Video.all.includes(:videos)
   end
 
   def new
@@ -12,7 +12,6 @@ class VideosController < ApplicationController
   end
 
   def create
-
     @video = Video.new(video_params)
     if @video.save
       flash[:notice] = 'Video was successfully added.'

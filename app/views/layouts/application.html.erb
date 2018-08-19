@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/v4-shims.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<%= stylesheet_link_tag    'application', media: 'all' %>
+<%= javascript_include_tag 'application' %>
 <script>
   var lastScrollTop = 0;
 
@@ -15,7 +20,6 @@
   }, false);
 
   function clickSearch() {
-    console.log("hi")
     var x = document.getElementById('search-button');
     if (x.style.display === 'block') {
         x.style.display = 'none';
@@ -25,9 +29,13 @@
   }
 </script>
   <head style="position: relative;">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+      html {
+        font-family: 'Open Sans', sans-serif;
+      }
       .top-bar {
+          display: flex;
+          justify-content: flex-start;
           position: fixed;
           top: 0;
           height: 48px;
@@ -38,13 +46,14 @@
           background-color: #333;
           z-index: 1000000;
       }
+
       #top-menu {
         -webkit-transition: top 0.5s;
         transition: top 0.5s;
       }
 
       li {
-          float: left;
+        display: flex;
       }
 
       li a, .dropbtn {
@@ -55,12 +64,29 @@
           text-decoration: none;
       }
 
+      a.dropbtn {
+        padding: 0 10px !important;
+        background-color: green;
+        font-size: 16px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+      }
+
       li a:hover, .dropdown:hover .dropbtn {
           background-color: red;
       }
 
       li.dropdown {
-          display: inline-block;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+        padding: 0 10px;
       }
 
       .dropdown-content {
@@ -103,9 +129,18 @@
       }
 
       /* When the input field gets focus, change its width to 100% */
+      .search-li {
+        width: -webkit-fill-available;
+      }
+
+      #search-form {
+        width: -webkit-fill-available;
+      }
+
       input[type=text]:focus {
           width: 80%;
           margin-left: 0px;
+          text-align: center;
       }
 
       input[type=email] {
@@ -270,21 +305,18 @@
           <% end %>
         </div>
       </li>
-
-      <%= form_tag(careers_path, :method => "get", id: "search-form") do %>
+      <li class="search-li">
+        <%= form_tag(careers_path, :method => "get", id: "search-form") do %>
         <%= text_field_tag :search, params[:search], placeholder: "Career", :class => "search-bar", :html => { :onclick => "searchClick()"} %>
         <%= button_tag :type => 'submit', :id => "search-button", :class => "w3-padding w3-xxlarge search-submit", :name => nil do %>
         <i class="fa fa-search"></i>
         <% end %>
-      <% end %>
+        <% end %>
+      </li>
 
 
     </ul>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
   </head>
 
   <body style="top-margin: 10%;">

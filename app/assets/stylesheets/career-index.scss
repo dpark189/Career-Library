@@ -1,0 +1,38 @@
+.hover-disp {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  background: #efefef;
+}
+
+.career-thumbnail {
+  width: 150px;
+   height: 175px;
+   text-align: center;
+   background-color: rgba(200, 200, 200, 0.5);
+   color: black;
+   vertical-align: top;
+   display: inline-block;
+   margin:10px;
+   position: relative;
+   zoom: 1
+}
+
+
+.career-names {
+  overflow: auto;
+  display: block;
+  margin-left: 6%;
+  max-width: 100%;
+}
+.thumbnail {
+  color: black;
+}
+.career-names > div {
+  margin: 20px;
+  width: 150px;
+  height: 100px;
+  float: left;
+  text-align: center;
+}

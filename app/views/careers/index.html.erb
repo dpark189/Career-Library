@@ -12,6 +12,7 @@
    vertical-align: top;
    display: inline-block;
    margin:10px;
+   position: relative;
    zoom: 1
 }
 
@@ -32,13 +33,53 @@
   float: left;
   text-align: center;
 }
+
+.hover-disp {
+  display: none;
+  color: white;
+  position: absolute;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 </style>
 
 <div class="career-names">
     <% @careers.each do |career| %>
     <li class="career-thumbnail">
+      <div class="hover-disp">
+        <i class="fas fa-video">
+          <%= career.videos.count %>
+        </i>
+      </div>
     <%= link_to career.name, career_path(career), :class => "thumbnail" %> <br>
     <%= image_tag career.career_image, :class => "career-index-thumbnail" %>
     </li>
     <% end %>
 </div>
+<script type="text/javascript">
+  const allThumbnails = document.getElementsByClassName("career-thumbnail");
+  console.log(allThumbnails)
+  function handleMouseOver(element){
+    const target = element;
+    return (e)=>{
+      target.getElementsByClassName("hover-disp")[0].style.display = "flex";
+    }
+  }
+  function handleMouseOut(element){
+    const target = element;
+    return (e) => {
+      debugger
+      target.getElementsByClassName("hover-disp")[0].style.display = "none";
+    }
+  }
+  for (let i = 0; i < allThumbnails.length; i++) {
+    allThumbnails[i].addEventListener("mouseover", handleMouseOver(allThumbnails[i]));
+    allThumbnails[i].addEventListener("mouseout", handleMouseOut(allThumbnails[i]));
+  }
+</script>
