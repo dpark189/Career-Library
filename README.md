@@ -31,9 +31,5 @@ To run Enzyme tests, run `yarn test`
 
 **Future Development**
 ```
--Admin authorization functions
--Integrate React
--Add additional rspec tests, along with Jasmine/Enzyme to test for React components
--Practice with adding more javascript and jquery to improve user friendliness
--Organize code to make it more readable
+-This project is not currently being worked on
 ```
