@@ -1,8 +1,6 @@
 
 ![Build Status](https://app.codeship.com/projects/72cf0be0-4fd9-0135-7faf-6279c3a80d3c/status?branch=master)
 
-heroku app
-
 ### This project was created as a practice project
 
 TECHNOLOGIES: Currently, CareerLibrary is using Ruby on Rails, Javascript, and CSS for it's front end, and uses the Devise gem to allow users to sign up and sign in.
